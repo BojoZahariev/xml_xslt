@@ -74,3 +74,58 @@
     <body>I will not</body>
   </note>
 </messages>
+
+<!--Solving the Name Conflict Using a Prefix-->
+
+<h:table>
+  <h:tr>
+    <h:td>Apples</h:td>
+    <h:td>Bananas</h:td>
+  </h:tr>
+</h:table>
+
+<f:table>
+  <f:name>African Coffee Table</f:name>
+  <f:width>80</f:width>
+  <f:length>120</f:length>
+</f:table>
+
+<table xmlns="http://www.w3.org/TR/html4/">
+  <tr>
+    <td>Apples</td>
+    <td>Bananas</td>
+  </tr>
+</table>
+
+<table xmlns="https://www.w3schools.com/furniture">
+  <name>African Coffee Table</name>
+  <width>80</width>
+  <length>120</length>
+</table>
+
+<!--real use-->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match="/">
+<html>
+<body>
+  <h2>My CD Collection</h2>
+  <table border="1">
+    <tr>
+      <th style="text-align:left">Title</th>
+      <th style="text-align:left">Artist</th>
+    </tr>
+    <xsl:for-each select="catalog/cd">
+    <tr>
+      <td><xsl:value-of select="title"/></td>
+      <td><xsl:value-of select="artist"/></td>
+    </tr>
+    </xsl:for-each>
+  </table>
+</body>
+</html>
+</xsl:template>
+
+</xsl:stylesheet>
