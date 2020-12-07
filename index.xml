@@ -386,5 +386,25 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <td><xsl:value-of select="title"/></td>
       <td><xsl:value-of select="artist"/></td>
     </tr>
-    </xsl:for-each>
+</xsl:for-each>
 
+<!--sort-->
+<xsl:for-each select="catalog/cd">
+      <xsl:sort select="artist"/>
+      <tr>
+        <td><xsl:value-of select="title"/></td>
+        <td><xsl:value-of select="artist"/></td>
+      </tr>
+</xsl:for-each>
+
+
+<!--<xsl:if>-->
+<xsl:for-each select="catalog/cd">
+      <xsl:if test="price &gt; 10">
+        <tr>
+          <td><xsl:value-of select="title"/></td>
+          <td><xsl:value-of select="artist"/></td>
+          <td><xsl:value-of select="price"/></td>
+        </tr>
+      </xsl:if>
+</xsl:for-each>
