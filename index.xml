@@ -408,3 +408,40 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </tr>
       </xsl:if>
 </xsl:for-each>
+
+
+<!--<xsl:choose>-->
+<xsl:for-each select="catalog/cd">
+    <tr>
+      <td><xsl:value-of select="title"/></td>
+      <xsl:choose>
+        <xsl:when test="price &gt; 10">
+          <td bgcolor="#ff00ff">
+          <xsl:value-of select="artist"/></td>
+        </xsl:when>
+        <xsl:otherwise>
+          <td><xsl:value-of select="artist"/></td>
+        </xsl:otherwise>
+      </xsl:choose>
+    </tr>
+</xsl:for-each>
+
+
+ <xsl:for-each select="catalog/cd">
+    <tr>
+      <td><xsl:value-of select="title"/></td>
+      <xsl:choose>
+        <xsl:when test="price &gt; 10">
+          <td bgcolor="#ff00ff">
+          <xsl:value-of select="artist"/></td>
+        </xsl:when>
+        <xsl:when test="price &gt; 9">
+          <td bgcolor="#cccccc">
+          <xsl:value-of select="artist"/></td>
+        </xsl:when>
+        <xsl:otherwise>
+          <td><xsl:value-of select="artist"/></td>
+        </xsl:otherwise>
+      </xsl:choose>
+    </tr>
+    </xsl:for-each>
